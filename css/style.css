@@ -1,0 +1,67 @@
+.right {
+    background-color: #99B6A0;
+    width: 100%;
+}
+
+.left {
+    padding: 2% 5% 0 5%;
+}
+
+.form-control {
+    background-color: none;
+    border: 1px solid #99B6A0;
+    color: #000000;
+    font-family: 'Nunito', sans-serif;
+}
+
+label {
+    margin: 4% 0 2% 0;
+}
+
+.form-check label {
+    margin: 0%;
+}
+
+label,
+H2 {
+    color: #0D3D47;
+    font-family: 'Nunito', sans-serif;
+}
+
+.input-group-text {
+    background-color: #99B6A0;
+}
+
+.input-group-text i {
+    color: #ffffff;
+}
+
+option {
+    background-color: rgba(153, 182, 160, 0.3);
+    color: #0D3D47;
+}
+
+option:active {
+    background-color: rgba(153, 182, 160, 1);
+    color: #0D3D47;
+}
+
+.form-select {
+    width: 100%;
+}
+
+.btn {
+    background-color: #0D3D47;
+    border: none;
+    width: 50%;
+    margin: 5% 25%;
+}
+
+.btn:hover {
+    background-color: #AFCFCE;
+    color: #0D3D47;
+}
+
+.bottom {
+    margin: 5% 0;
+}
