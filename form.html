@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-lg-6 left">
                 <h2>Registreer</h2>
-                <form action="">
+                <form action="" method="POST">
                     <div class="row">
                         <!-- Naam en voornaam-->
                         <div class="col-lg-6">
@@ -44,10 +44,10 @@
                         </div>
 
                         <div class="col">
-                            <label for="exampleFormControlInput1">Email adres</label>
+                            <label for="exampleFormControlEmail">Email adres</label>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1"><i class="fas fa-envelope"></i></span>
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="voorbeeld@mail.com" aria-describedby="basic-addon1">
+                                <input type="email" class="form-control" id="exampleFormControlEmail" placeholder="voorbeeld@mail.com" aria-describedby="basic-addon1">
                             </div>
 
 
@@ -83,14 +83,14 @@
                     <div class="row">
                         <!--Land, Postcode en Provincie-->
                         <div class="col">
-                            <label for="">Postcode
-                                <input type="text" class="form-control">
+                            <label for="exampleInputPostcode">Postcode
+                                <input type="text" class="form-control" id="exampleInputPostcode">
                             </label>
 
                         </div>
                         <div class="col">
-                            <label for="exampleFormControlSelect1">Land</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
+                            <label for="exampleFormSelectLand">Land</label>
+                            <select class="form-control" id="exampleFormSelectLand">
                     <option>België</option>
                     <option>Nederland</option>
                     <option>Duitsland</option>
@@ -98,8 +98,8 @@
                   </select>
                         </div>
                         <div class="col">
-                            <label for="exampleFormControlSelect1">Provincie</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
+                            <label for="exampleFormControlSelectProvincie">Provincie</label>
+                            <select class="form-control" id="exampleFormControlSelectProvincie">
                     <option>Antwerpen</option>
                     <option>Henegouwen</option>
                     <option>Limburg</option>
@@ -119,18 +119,18 @@
                         <div class="col-lg-6">
                             <h3>Algemeen</h3>
                             <div class="form-group form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Ik ga akkoort met de algemene voorwaarden</label>
+                                <input type="checkbox" class="form-check-input" id="exampleVoorwaarde">
+                                <label class="form-check-label" for="exampleVoorwaarde">Ik ga akkoort met de algemene voorwaarden</label>
                             </div>
                             <div class="form-group form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Nieuwsbrief ontvangen</label>
+                                <input type="checkbox" class="form-check-input" id="exampleNieuwsbrief">
+                                <label class="form-check-label" for="exampleNieuwsbrief">Nieuwsbrief ontvangen</label>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <h3>Betaling</h3>
                             <p>Selecteer een betaal wijze</p>
-                            <select class="form-select" size="3" aria-label="size 3 select example">
+                            <select class="form-select" size="3" aria-label="size 3 select example" id="exampleBetaling">
                                 <option value="1">Bank app</option>
                                 <option value="2">Overschrijving</option>
                                 <option value="3">Visa Card</option>
@@ -141,13 +141,15 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
-                            <button type="submit" class="btn btn-primary">Registratie verzenden</button>
+                            <button type="submit" onclick="validateForm()" class="btn btn-primary" id="exampleVerzenden">Registratie verzenden</button>
                         </div>
                     </div>
                 </form>
 
             </div>
-            <div class="col-lg-6 right"></div>
+            <div class="col-lg-6 right">
+                <div id="Melding"></div>
+            </div>
         </div>
 
 
@@ -158,6 +160,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     </script>
     <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/ScriptFormulier.js"></script>
 </body>
 
 </html>
