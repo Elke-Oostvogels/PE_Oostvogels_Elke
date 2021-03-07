@@ -1,10 +1,11 @@
 let errors = [];
 
-let postcode = document.forms["registratie"]["exampleInputPostcode"].value;
+
 
 function validateForm() {
     checkEmptyField();
     validateWachtwoord();
+    let postcode = document.forms["registratie"]["exampleInputPostcode"].value;
     checkPC(postcode);
 
 }
@@ -46,7 +47,7 @@ function validatePayment(veld) {
 function checkPC(veld) {
     if (veld == "") {
         errors += "Het veld postcode is vereist";
-    } else if (veld < 1000 && veld > 9999) {
+    } else if (veld < 1000 || veld > 9999) {
         errors += "De waarde van postcode moet tussen de 1000 en 9999 liggen.";
     } else {
         return false;
