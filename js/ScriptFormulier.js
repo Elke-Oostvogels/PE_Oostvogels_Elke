@@ -3,6 +3,7 @@ let melding = [];
 let meldingBetaling = "";
 window.onload = VerbergenAlert();
 
+// verbergen alerts
 function VerbergenAlert() {
     document.getElementById("MeldingErrors").style.display = 'none';
     document.getElementById("MeldingSucces").style.display = 'none';
@@ -10,7 +11,7 @@ function VerbergenAlert() {
 }
 
 function validateForm() {
-    // waardes toekennen (postcode, betaling, )
+    // waardes toekennen (postcode, betaling, email )
     let betaling = document.getElementById("exampleBetaling").value;
     let postcode = document.forms["registratie"]["exampleInputPostcode"].value;
     let email = document.forms["registratie"]["exampleFormControlEmail"].value;
@@ -21,10 +22,10 @@ function validateForm() {
         this.gebruikersnaam = gebruikersnaam;
         this.adres = adres;
         this.land = land;
-        this.proprovincie = provincie;
+        this.provincie = provincie;
 
     }
-    // Object maken
+    // object maken gegevens verplichte velden
     let veld = new Gegevens(document.forms["registratie"]["exampleInputVoornaam"].value,
         document.forms["registratie"]["exampleInputNaam"].value,
         document.forms["registratie"]["exampleInputGebruikersnaam"].value,
@@ -33,15 +34,22 @@ function validateForm() {
         document.getElementById("exampleFormControlSelectProvincie").value);
 
 
-    // let voorwaarde = document.forms
+    // let voorwaarde = document.getElementById("exampleVoorwaarde").value;
 
+    // if (voorwaarde == "yes") {
+    //     errors += "Je moet de algemene voorwaarden accepteren.";
+    // }
+
+    if (document.getElementById("exampleVoorwaarde").checked == false) {
+        errors += "Je moet de algemene voorwaarden accepteren.";
+    }
     // Oproepen functies
     errors += checkEmptyField(veld, melding);
     validateWachtwoord();
     checkPC(postcode);
     validateEmail(email);
     // document.forms["registratie"]["exampleFormControlEmail"].value;
-    // errors = checkEmptyField(veld, melding);
+
     meldingBetaling = validatePayment(betaling);
 
     if (errors == "") {
@@ -52,7 +60,7 @@ function validateForm() {
         document.getElementById("BoodschapErrors").innerText = errors;
     }
 
-    if (meldingBetaling != "") {
+    if (betaling !== "geen") {
         document.getElementById("MeldingBetaling").style.display = 'block';
         document.getElementById("BoodschapBetaling").innerText = meldingBetaling;
     }
@@ -75,16 +83,14 @@ function checkEmptyField(veld, melding) {
     if (veld.adres == "") {
         melding += "Het veld adres is vereist.\n";
     }
-    if (veld.land == "") {
+    if (veld.land == "Selecteer uw land") {
         melding += "Het veld land is vereist.\n";
     }
-    if (veld.proprovincie == "") {
+    if (veld.provincie == "Selecteer uw provincie") {
         melding += "Het veld provincie is vereist.\n";
     }
     return melding;
 }
-
-
 
 // Functie controle op een geldig email 
 function validateEmail(emailadres) {
@@ -107,7 +113,7 @@ function validateWachtwoord() {
         errors += "Het veld wachtwoord is vereist.\n";
     } else if (wachtwoord2 == "") {
         errors += "Het veld herhaal wachtwoord is vereist.\n";
-    } else if (wachtwoord1.length < 7) {
+    } else if (wachtwoord1.length < 8) {
         errors += "Het wachtwoord moet uit 7 of meer karakters bestaan.\n";
     } else if (wachtwoord1 !== wachtwoord2) {
         errors += "Je wachtwoorden komen niet overeen.\n";
@@ -140,4 +146,6 @@ https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation
 Oproepen waarde select option
 https://www.w3schools.com/jsref/prop_select_value.asp
 Oproepen eerste karakter string
-https://www.w3schools.com/jsref/jsref_startswith.asp */
+https://www.w3schools.com/jsref/jsref_startswith.asp 
+Controle checkbox
+https://stackoverflow.com/questions/11234622/simple-javascript-checkbox-validation*/

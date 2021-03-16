@@ -91,15 +91,17 @@
                         <div class="col">
                             <label for="exampleFormSelectLand">Land</label>
                             <select class="form-control" id="exampleFormSelectLand">
-                    <option>België</option>
-                    <option>Nederland</option>
-                    <option>Duitsland</option>
-                    <option>Frankrijk</option>
+                                <option>Selecteer uw land</option>
+                                <option>België</option>
+                                <option>Nederland</option>
+                                <option>Duitsland</option>
+                                <option>Frankrijk</option>
                   </select>
                         </div>
                         <div class="col">
                             <label for="exampleFormControlSelectProvincie">Provincie</label>
                             <select class="form-control" id="exampleFormControlSelectProvincie">
+                                <option>Selecteer uw provincie</option>
                     <option>Antwerpen</option>
                     <option>Henegouwen</option>
                     <option>Limburg</option>
@@ -115,12 +117,11 @@
                     </div>
                     <div class="row bottom">
                         <!-- Betaling-->
-
                         <div class="col-lg-6">
                             <h3>Algemeen</h3>
                             <div class="form-group form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleVoorwaarde">
-                                <label class="form-check-label" for="exampleVoorwaarde">Ik ga akkoort met de algemene voorwaarden</label>
+                                <input type="checkbox" class="form-check-input" id="exampleVoorwaarde" name="Voorwaarden">
+                                <label class="form-check-label" for="exampleVoorwaarde">Ik ga akkoord met de algemene voorwaarden</label>
                             </div>
                             <div class="form-group form-check">
                                 <input type="checkbox" class="form-check-input" id="exampleNieuwsbrief">
@@ -129,13 +130,13 @@
                         </div>
                         <div class="col-lg-6">
                             <h3>Betaling</h3>
-                            <p>Selecteer een betaal wijze</p>
-                            <select class="form-select" size="3" aria-label="size 3 select example" id="exampleBetaling">
-                                <option value="Bankapp">Bank app</option>
+                            <select class="form-control" id="exampleBetaling">
+                                <option value="geen">Selecteer een betaalwijze</option>
+                                <option value="Bankingapp">Banking app</option>
                                 <option value="Overschrijving">Overschrijving</option>
                                 <option value="Visacard">Visa Card</option>
                                 <option value="Paypal">PayPal</option>
-                              </select>
+                            </select>
                         </div>
 
                     </div>
