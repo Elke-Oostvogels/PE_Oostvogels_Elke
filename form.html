@@ -21,11 +21,11 @@
         <div class="row">
             <div class="col-lg-6 left">
                 <h2>Registreer</h2>
-                <form method=" POST" name="registratie">
+                <form method=" POST" name="registratie" action="#">
                     <div class="row">
                         <!-- Naam en voornaam-->
                         <div class="col-lg-6">
-                            <label for="exampleInputNaam">Naam</label>
+                            <label for="InputNaam">Naam</label>
                             <input type="text" class="form-control" id="exampleInputNaam" placeholder="Uw naam">
                         </div>
                         <div class="col-lg-6">
@@ -47,7 +47,7 @@
                             <label for="exampleFormControlEmail">Email adres</label>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1"><i class="fas fa-envelope"></i></span>
-                                <input type="email" class="form-control" id="exampleFormControlEmail" placeholder="voorbeeld@mail.com" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" id="exampleFormControlEmail" placeholder="voorbeeld@mail.com" aria-describedby="basic-addon1">
                             </div>
 
 
@@ -148,11 +148,22 @@
 
             </div>
             <div class="col-lg-6 right">
-                <div id="Melding"></div>
+                <div id="Melding">
+                    <div class="alert alert-primary" id="MeldingBetaling" role="alert">
+                        <h4>Betalingswijze</h4>
+                        <p id="BoodschapBetaling"></p>
+                    </div>
+                    <div class="alert alert-success" id="MeldingSucces" role="alert">
+                        <h4>Goed Gedaan!</h4>
+                        <p>De registratie is gelukt!</p>
+                    </div>
+                    <div class="alert alert-danger" id="MeldingErrors" role="alert">
+                        <h4>Errors</h4>
+                        <p id="BoodschapErrors"></p>
+                    </div>
+                </div>
             </div>
         </div>
-
-
     </div>
 
     <!--## Voor /body-->
