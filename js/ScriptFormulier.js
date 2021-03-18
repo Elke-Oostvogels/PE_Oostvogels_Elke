@@ -23,8 +23,8 @@ function validateForm() {
         this.adres = adres;
         this.land = land;
         this.provincie = provincie;
-
     }
+
     // object maken gegevens verplichte velden
     let veld = new Gegevens(document.forms["registratie"]["exampleInputVoornaam"].value,
         document.forms["registratie"]["exampleInputNaam"].value,
@@ -33,24 +33,16 @@ function validateForm() {
         document.getElementById("exampleFormSelectLand").value,
         document.getElementById("exampleFormControlSelectProvincie").value);
 
-
-    // let voorwaarde = document.getElementById("exampleVoorwaarde").value;
-
-    // if (voorwaarde == "yes") {
-    //     errors += "Je moet de algemene voorwaarden accepteren.";
-    // }
+    // Oproepen functies
+    errors += checkEmptyField(veld, melding);
+    validateEmail(email);
+    validateWachtwoord();
+    meldingBetaling = validatePayment(betaling);
+    checkPC(postcode);
 
     if (document.getElementById("exampleVoorwaarde").checked == false) {
         errors += "Je moet de algemene voorwaarden accepteren.";
     }
-    // Oproepen functies
-    errors += checkEmptyField(veld, melding);
-    validateWachtwoord();
-    checkPC(postcode);
-    validateEmail(email);
-    // document.forms["registratie"]["exampleFormControlEmail"].value;
-
-    meldingBetaling = validatePayment(betaling);
 
     if (errors == "") {
         document.getElementById("MeldingSucces").style.display = 'block';
@@ -58,9 +50,6 @@ function validateForm() {
     } else {
         document.getElementById("MeldingErrors").style.display = 'block';
         document.getElementById("BoodschapErrors").innerText = errors;
-    }
-
-    if (betaling !== "geen") {
         document.getElementById("MeldingBetaling").style.display = 'block';
         document.getElementById("BoodschapBetaling").innerText = meldingBetaling;
     }
