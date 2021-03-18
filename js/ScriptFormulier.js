@@ -46,12 +46,13 @@ function validateForm() {
 
     if (errors == "") {
         document.getElementById("MeldingSucces").style.display = 'block';
+        document.getElementById("MeldingBetaling").style.display = 'block';
+        document.getElementById("BoodschapBetaling").innerText = meldingBetaling;
 
     } else {
         document.getElementById("MeldingErrors").style.display = 'block';
         document.getElementById("BoodschapErrors").innerText = errors;
-        document.getElementById("MeldingBetaling").style.display = 'block';
-        document.getElementById("BoodschapBetaling").innerText = meldingBetaling;
+
     }
 
     // Controle functies
@@ -83,15 +84,12 @@ function checkEmptyField(veld, melding) {
 
 // Functie controle op een geldig email 
 function validateEmail(emailadres) {
-
-    let first = emailadres.charAt(0);
-    if (first >= 'a' && first >= 'z' || first <= 9 && first >= 0) {
-        errors += "Uw emailadress moet beginnen met een letter of een cijfer.\n";
-    }
-    let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    let pattern = /^[a-z\d]+([a-z\d\.-]+)+@[a-z\d]+([a-z\d-]+)\.[a-z]{2,3}$/;
     if (!emailadres.match(pattern)) {
         errors += "Emailadress is niet correct.\n";
+        return false
     }
+    return true;
 }
 
 // Functie controle wachtwoord en herhaald wachtwoord
