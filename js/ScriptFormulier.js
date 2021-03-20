@@ -130,9 +130,8 @@ function checkPC(veld) {
 https://www.w3schools.com/howto/howto_js_validation_empty_input.asp
 Controle email-adress
 https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation
+https://www.youtube.com/watch?v=QxjAOSUQjP0&t=377s
 Oproepen waarde select option
 https://www.w3schools.com/jsref/prop_select_value.asp
-Oproepen eerste karakter string
-https://www.w3schools.com/jsref/jsref_startswith.asp 
 Controle checkbox
 https://stackoverflow.com/questions/11234622/simple-javascript-checkbox-validation*/
